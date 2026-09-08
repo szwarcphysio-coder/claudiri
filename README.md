@@ -29,8 +29,8 @@ Terminy liczy od zegara telefonu, nie od swoich wyobrażeń o dacie. „Za godzi
 
 ## Instalacja
 
-1. Pobierz [`Claudiri.shortcut`](Claudiri.shortcut) na iPhone'a (najprościej: otwórz tę stronę w Safari na telefonie i zapisz plik).
-2. Otwórz pobrany plik. Skróty zapytają, czy dodać.
+1. Na iPhonie otwórz w Safari [stronę wydania](https://github.com/szwarcphysio-coder/claudiri/releases/latest) i pobierz plik `Claudiri.shortcut`. Alternatywnie [link bezpośredni](https://raw.githubusercontent.com/szwarcphysio-coder/claudiri/main/Claudiri.shortcut).
+2. Otwórz pobrany plik (Pliki, folder Pobrane). Skróty zapytają, czy dodać.
 3. Wejdź w Skróty, długie przytrzymanie na Claudiri, i wpięcie tam, gdzie ma być pod ręką: ekran główny, przycisk akcji albo Siri.
 
 Skrót jest podpisany tak, żeby dało się go zaimportować bez włączania trybu dla niezaufanych skrótów.
