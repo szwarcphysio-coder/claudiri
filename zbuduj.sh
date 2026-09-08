@@ -1,5 +1,5 @@
 #!/bin/bash
-# Podpisuje zrodlo/Claudiri.xml do gotowego Claudiri.shortcut.
+# Podpisuje kazdy wariant z zrodlo/*.xml do gotowego pliku .shortcut w katalogu repo.
 # macOS z aplikacja Skroty. Rozszerzenie pliku wejsciowego musi byc .shortcut,
 # bo `shortcuts sign` waliduje po rozszerzeniu, nie po zawartosci.
 set -euo pipefail
@@ -8,8 +8,10 @@ cd "$(dirname "$0")"
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
-plutil -lint zrodlo/Claudiri.xml >/dev/null
-cp zrodlo/Claudiri.xml "$TMP/Claudiri.shortcut"
-shortcuts sign -m anyone -i "$TMP/Claudiri.shortcut" -o Claudiri.shortcut
-
-echo "gotowe: Claudiri.shortcut ($(wc -c < Claudiri.shortcut | tr -d ' ') B)"
+for XML in zrodlo/*.xml; do
+  NAZWA=$(basename "$XML" .xml)
+  plutil -lint "$XML" >/dev/null
+  cp "$XML" "$TMP/$NAZWA.shortcut"
+  shortcuts sign -m anyone -i "$TMP/$NAZWA.shortcut" -o "$NAZWA.shortcut"
+  echo "gotowe: $NAZWA.shortcut ($(wc -c < "$NAZWA.shortcut" | tr -d ' ') B)"
+done
