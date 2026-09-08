@@ -2,7 +2,7 @@
 
 Skrót na iPhone'a, który zamienia jedno zdanie powiedziane na głos w wykonane działanie na telefonie. Mówisz „nastaw budzik na szóstą trzydzieści, dopisz mleko do zakupów i przypomnij mi zadzwonić do księgowej w czwartek", a telefon zakłada budzik, dopisuje produkt i dodaje przypomnienie. Trzy rzeczy z jednego zdania.
 
-Rozpoznawanie robi Claude, ale wykonanie jest w całości natywne: Przypomnienia, Kalendarz, Zegar, Mapy, Muzyka. Nic nie wychodzi na żaden serwer poza samą aplikacją Claude, nie ma konta do zakładania, nie ma nic do skonfigurowania poza jedną listą zakupów.
+Rozpoznawanie robi Claude, ale wykonanie jest w całości natywne: Przypomnienia, Kalendarz, Zegar, Mapy, Muzyka. Nic nie wychodzi na żaden serwer poza samą aplikacją Claude, nie ma konta do zakładania, nie ma nic do skonfigurowania.
 
 ## Co umie
 
@@ -12,7 +12,7 @@ Rozpoznawanie robi Claude, ale wykonanie jest w całości natywne: Przypomnienia
 | „spotkanie z Anią jutro o dwunastej na godzinę" | wydarzenie w kalendarzu |
 | „budzik na szóstą trzydzieści", „wyłącz budzik na siódmą" | założenie, włączenie albo wyłączenie budzika |
 | „ustaw minutnik na dwadzieścia minut" | odliczanie w Zegarze |
-| „dopisz mleko i ogórki do zakupów" | dwie pozycje na liście zakupów |
+| „dopisz mleko i ogórki do zakupów" | dwie pozycje w Przypomnieniach, po dziale sklepowym |
 | „zawieź mnie do Biedronki na Grunwaldzkiej" | nawigacja w Mapach Google |
 | „puść coś na trening" | Claude wybiera wykonawcę, gra Apple Music |
 | „ile kalorii ma awokado" | otwarta wyszukiwarka z tym pytaniem |
@@ -25,13 +25,17 @@ Terminy liczy od zegara telefonu, nie od swoich wyobrażeń o dacie. „Za godzi
 
 - iPhone. Zbudowane i sprawdzone na iOS 26, starszych wersji nie testowaliśmy.
 - Aplikacja **Claude** zainstalowana i zalogowana. Skrót korzysta z jej rozszerzenia, więc bez aplikacji nie ruszy.
-- Lista w Przypomnieniach o nazwie **Zakupy**. Jeśli Twoja nazywa się inaczej, patrz „Dostrajanie" niżej.
+
+Nic poza tym. Nie ma konta do zakładania ani klucza do wklejania.
 
 ## Instalacja
 
 1. Na iPhonie otwórz w Safari [stronę wydania](https://github.com/szwarcphysio-coder/claudiri/releases/latest) i pobierz plik `Claudiri.shortcut`. Alternatywnie [link bezpośredni](https://raw.githubusercontent.com/szwarcphysio-coder/claudiri/main/Claudiri.shortcut).
 2. Otwórz pobrany plik (Pliki, folder Pobrane). Skróty zapytają, czy dodać.
 3. Wejdź w Skróty, długie przytrzymanie na Claudiri, i wpięcie tam, gdzie ma być pod ręką: ekran główny, przycisk akcji albo Siri.
+4. Jeśli chcesz mieć zakupy na osobnej liście: otwórz skrót do edycji, znajdź w gałęzi `dodaj_zakupy` akcję „Dodaj nowe przypomnienie" i wybierz w niej swoją listę. Bez tego produkty trafiają na listę domyślną, co też działa, tylko mniej porządnie.
+
+Ten czwarty krok trzeba zrobić ręcznie na swoim telefonie, bo Przypomnienia identyfikują listę po wewnętrznym identyfikatorze, innym na każdym urządzeniu. Nazwa listy wpisana w pliku nic nie da: skrót pokaże w interfejsie właściwą nazwę, a wpisy i tak pójdą do listy domyślnej. Dlatego w tej wersji pole listy jest celowo puste, zamiast obiecywać coś, czego nie dowiezie.
 
 Skrót jest podpisany tak, żeby dało się go zaimportować bez włączania trybu dla niezaufanych skrótów.
 
@@ -41,7 +45,6 @@ Skrót jest podpisany tak, żeby dało się go zaimportować bez włączania try
 
 Wszystko siedzi w akcji **Tekst** tuż nad akcją Claude. To zwykły prompt po polsku, cała logika rozpoznawania jest w nim opisana zdanie po zdaniu. Możesz go czytać i zmieniać wprost w aplikacji Skróty.
 
-- **Inna nazwa listy zakupów:** w gałęzi `dodaj_zakupy` jest akcja „Dodaj nowe przypomnienie" z polem listy ustawionym na `Zakupy`. Zmień na swoją.
 - **Inna wyszukiwarka albo mapy:** dwie akcje „Otwórz URL" z adresem Google. Podmień adres.
 - **Inne domyślne godziny:** reguły 3 i 4 w prompcie („rano 8:00, przed południem 10:00...").
 - **Nowe narzędzie:** dopisz je do listy narzędzi w prompcie i dołóż gałąź `Jeśli` porównującą pole `narzedzie`.

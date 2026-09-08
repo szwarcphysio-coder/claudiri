@@ -555,8 +555,6 @@ Odpowiedz teraz samym JSON-em.</string>
 				<string>2A40FA00-0000-4000-9000-000000000005</string>
 				<key>WFAlertEnabled</key>
 				<string>No Alert</string>
-				<key>WFCalendarItemCalendar</key>
-				<string>Zakupy</string>
 				<key>WFCalendarItemTitle</key>
 				<dict>
 					<key>Value</key>
