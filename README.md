@@ -33,7 +33,10 @@ Nic poza tym: żadnego klucza do wklejania, żadnej usługi do podpięcia.
 
 1. Na iPhonie otwórz w Safari [stronę wydania](https://github.com/szwarcphysio-coder/claudiri/releases/latest) i pobierz plik `Claudiri.shortcut`. Alternatywnie [link bezpośredni](https://raw.githubusercontent.com/szwarcphysio-coder/claudiri/main/Claudiri.shortcut).
 2. Otwórz pobrany plik (Pliki, folder Pobrane). Skróty zapytają, czy dodać.
-3. Wejdź w Skróty, długie przytrzymanie na Claudiri, i wpięcie tam, gdzie ma być pod ręką: ekran główny, przycisk akcji albo Siri.
+3. Podepnij go tam, gdzie ma być pod ręką. Sens tego skrótu jest w tym, żeby dało się go odpalić jednym ruchem, bez szukania ikony:
+   - **Przycisk czynności**, jeśli masz nowszego iPhone'a (od 15 Pro wzwyż). Ustawienia > Przycisk czynności, przewiń do „Skrót" i wybierz Claudiri. Przytrzymujesz przycisk i mówisz.
+   - **Ekran blokady** na starszych modelach. Przytrzymaj palec na ekranie blokady, dotknij „Dostosuj", potem „Ekran blokady", dodaj widżet Skrótów i wskaż Claudiri. Odpala się bez odblokowywania telefonu.
+   - Do tego Siri („Hej Siri, Claudiri") albo zwykła ikona na ekranie głównym, jeśli tak wolisz.
 4. Jeśli chcesz mieć zakupy na osobnej liście: otwórz skrót do edycji, znajdź w gałęzi `dodaj_zakupy` akcję „Dodaj nowe przypomnienie" i wybierz w niej swoją listę. Bez tego produkty trafiają na listę domyślną, co też działa, tylko mniej porządnie.
 
 Ten czwarty krok trzeba zrobić ręcznie na swoim telefonie, bo Przypomnienia identyfikują listę po wewnętrznym identyfikatorze, innym na każdym urządzeniu. Nazwa listy wpisana w pliku nic nie da: skrót pokaże w interfejsie właściwą nazwę, a wpisy i tak pójdą do listy domyślnej. Dlatego w tej wersji pole listy jest celowo puste, zamiast obiecywać coś, czego nie dowiezie.
